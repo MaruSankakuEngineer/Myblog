@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}まるさんかくの工作室{% endblock %}</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 追加のカスタムCSSがあればここに記述 -->
+</head>
+<body>
+    <!-- ヘッダー部分 -->
+    <header class="bg-dark text-white p-3">
+        <div class="container">
+            <h1 class="h2">まるさんかくの工作室</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-light" href="/">ホーム</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="/about">著者情報</a></li>
+                    <li class="nav-item"><a class="nav-link text-light" href="/archives">アーカイブ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ部分 -->
+    <div class="container py-4">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- フッター部分 -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2024 自作電子工作ブログ</p>
+    </footer>
+
+    <!-- Bootstrap JS (jQueryを使わない場合はこの部分のみ) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

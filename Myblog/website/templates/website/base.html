@@ -27,7 +27,35 @@
 
     <!-- メインコンテンツ部分 -->
     <div class="container py-4">
-        {% block content %}{% endblock %}
+        <div class="row">
+            <!-- 左側のメインコンテンツ -->
+            <div class="col-md-8">
+                {% block content %}{% endblock %}
+            </div>
+
+            <!-- 右側の追加部分 -->
+            <div class="col-md-4">
+                <div class="card my-4">
+                    <h5 class="card-header">著者情報</h5>
+                    <div class="card-body">
+                        <p>著者の紹介がここに入ります。</p>
+                        <a href="/about" class="btn btn-primary btn-sm">詳細を見る</a>
+                    </div>
+                </div>
+
+                <div class="card my-4">
+                    <h5 class="card-header">アーカイブ</h5>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li><a href="#">2024年12月</a></li>
+                            <li><a href="#">2024年11月</a></li>
+                            <li><a href="#">2024年10月</a></li>
+                            <!-- 追加したアーカイブリスト -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- フッター部分 -->

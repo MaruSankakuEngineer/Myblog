@@ -1,0 +1,46 @@
+{% extends 'website/base.html' %}
+
+{% block title %}ホームページ{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>最新の記事</h2>
+    <div class="row">
+        <!-- 記事リスト -->
+        {% for post in page_obj %}
+        <div class="col-md-12 mb-4">
+            <div class="post-preview">
+                <h3 class="post-title">{{ post.title }}</h3>
+                <p class="post-content">{{ post.content|truncatewords:50 }}</p>
+                <p>
+                    <a href="{% url 'post_detail' post.id %}" class="btn btn-primary btn-sm">詳細を見る</a>
+                </p>
+                <p class="text-muted small">投稿日: {{ post.created_at|date:"Y年m月d日 H:i" }}</p>
+            </div>
+        </div>
+        <hr>
+        {% empty %}
+        <p>記事がありません。</p>
+        {% endfor %}
+    </div>
+
+    <!-- ページネーション -->
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">最初のページ</a>
+                <a href="?page={{ page_obj.previous_page_number }}">前のページ</a>
+            {% endif %}
+
+            <span class="current">
+                ページ {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">次のページ</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">最後のページ</a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+{% endblock %}

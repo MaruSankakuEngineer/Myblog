@@ -1,0 +1,34 @@
+{% extends 'website/base.html' %}
+
+{% block title %}著者情報{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">著者について</h2>
+<div class="row">
+    <div class="col-md-8">
+        <p>
+            このブログは、趣味の電子工作やDIYプロジェクトを共有するために作成しました。<br>
+            著者はプログラミングや電子回路が好きで、日々新しいことに挑戦しています。
+        </p>
+        <p>
+            主なスキル：
+            <ul>
+                <li>Pythonプログラミング</li>
+                <li>ArduinoとRaspberry Piの活用</li>
+                <li>3Dプリンタ設計と制作</li>
+            </ul>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <h5 class="card-header">プロフィール</h5>
+            <div class="card-body">
+                <img src="https://via.placeholder.com/150" alt="著者写真" class="img-fluid rounded mb-3">
+                <p>名前: まるさんかく</p>
+                <p>趣味: プログラミング、DIY、音楽</p>
+                <p><a href="/contact" class="btn btn-primary btn-sm">お問い合わせ</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

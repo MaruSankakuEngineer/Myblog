@@ -5,3 +5,5 @@ def home(request):
     articles = Article.objects.all().order_by('-created_at')  # 最新順に取得
     return render(request, 'website/home.html', {'articles': articles})
 
+def abount(request):
+    return render(request, 'website/about.html')

@@ -12,7 +12,7 @@
         <div class="post-preview">
             <a href="#">
                 <h2 class="post-title">{{ article.title }}</h2>
-                <h3 class="post-subtitle">{{ article.content|truncatewords:20 }}</h3>
+                <h3 class="post-subtitle">{{ article.content|truncatewords_html:20|safe }}</h3>
             </a>
             <p class="post-meta">
                 投稿日: {{ article.created_at|date:"Y年m月d日" }}

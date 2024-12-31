@@ -123,3 +123,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'enterMode': 2,  # CKEDITOR.ENTER_BR: 改行で <br> を挿入
+        'shiftEnterMode': 1,  # CKEDITOR.ENTER_P: Shift+Enterで <p> を挿入
+    },
+}

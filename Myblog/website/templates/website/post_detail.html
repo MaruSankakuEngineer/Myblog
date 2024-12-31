@@ -5,7 +5,7 @@
 {% block content %}
 <div class="container mt-4">
     <h2>{{ post.title }}</h2>
-    <p class="post-content">{{ post.content|escape }}</p>
+    <p class="post-content">{{ post.content|safe }}</p>
     <p class="text-muted small">投稿日: {{ post.created_at|date:"Y年m月d日 H:i" }}</p>
 </div>
 {% endblock %}

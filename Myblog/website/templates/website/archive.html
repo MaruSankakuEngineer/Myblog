@@ -1,0 +1,16 @@
+{% extends 'website/base.html' %}
+
+{% block title %}アーカイブ{% endblock %}
+
+{% block content %}
+<h2>アーカイブ</h2>
+<ul>
+    {% for archive in archives %}
+    <li>
+        <a href="{%url 'archive_month' archive.month.year archive.month.month %}">
+            {{ archive.month|date:"Y年m月" }} ({{archive.count}} 件)
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

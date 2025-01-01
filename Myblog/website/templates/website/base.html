@@ -45,10 +45,19 @@
 
                 <div class="card my-4">
                     <h5 class="card-header">アーカイブ</h5>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="{% url 'archive' %}">アーカイブ</a>
-                    </li>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            {% for archive in archives %}
+                                <li>
+                                    <a href="{% url 'archive_month' archive.month.year archive.month.month %}">
+                                        {{ archive.month|date:"Y年m月" }} ({{ archive.count }} 件)
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
+                
             </div>
         </div>
     </div>

@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website',
-    'ckeditor',  # CKEditorを追加
+    'django_ckeditor_5',
 ]
 
 MIDDLEWARE = [
@@ -118,17 +118,34 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# 静的ファイルを集めるディレクトリの設定
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# メディアファイルの設定
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CKEDITOR_CONFIGS = {
+CKEDITOR_5_CONFIGS = {
     'default': {
-        'enterMode': 2,  # CKEDITOR.ENTER_BR: 改行で <br> を挿入
-        'shiftEnterMode': 1,  # CKEDITOR.ENTER_P: Shift+Enterで <p> を挿入
+        'toolbar': [
+            'bold', 'italic', 'underline', '|',
+            'link', 'imageUpload', 'blockQuote', 'code', '|', 
+            'undo', 'redo'
+        ],  # 画像アップロードボタンが表示されるようにする
+        'image': {
+            'toolbar': [
+                'imageTextAlternative', '|', 'imageStyle:full', 'imageStyle:side'
+            ],
+        },
+        'language': 'en',
+        'enterMode': 2,
+        'shiftEnterMode': 1,
     },
 }
 

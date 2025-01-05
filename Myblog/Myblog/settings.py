@@ -118,7 +118,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 # 静的ファイルを集めるディレクトリの設定
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'static'
 
 # メディアファイルの設定
 MEDIA_URL = '/media/'
